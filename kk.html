@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spider-Man</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background: #0b0f1a; color: #fff; line-height: 1.6; }
+    header { background: linear-gradient(to right, #8b0000, #000); padding: 80px 20px; text-align: center; }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-style: italic; opacity: 0.9; }
+    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 40px; color: #e63946; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: #111827; padding: 20px; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(230,57,70,0.4); }
+    .card img { width: 100%; border-radius: 10px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+    .gallery img { width: 100%; border-radius: 10px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.05); }
+    form { max-width: 500px; margin: auto; }
+    input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 8px; }
+    button { background: #e63946; color: #fff; padding: 12px; border: none; border-radius: 8px; cursor: pointer; width: 100%; }
+    button:hover { background: #b71c1c; }
+    footer { background: #000; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Spider-Man</h1>
+  <p>"With great power comes great responsibility."</p>
+</header>
+
+<section id="about">
+  <h2>About Spider-Man</h2>
+  <p>Spider-Man is Peter Parker, a young man who gained extraordinary powers after being bitten by a radioactive spider. He uses his abilities to protect the city, driven by responsibility, courage, and sacrifice.</p>
+</section>
+
+<section id="movies">
+  <h2>Movies</h2>
+  <div class="cards">
+    <div class="card"><img src="images/Spiderman Wallpapers HD for Desktop.jpg"><h3>Spider-Man (2002)</h3><p>2002 – The beginning of Peter Parker's journey.</p></div>
+    <div class="card"><img src="https://via.placeholder.com/300x200"><h3>The Amazing Spider-Man</h3><p>2012 – A new take on the hero.</p></div>
+    <div class="card"><img src="https://via.placeholder.com/300x200"><h3>Homecoming</h3><p>2017 – Balancing school and hero life.</p></div>
+  </div>
+</section>
+
+<section id="villains">
+  <h2>Villains</h2>
+  <div class="cards">
+    <div class="card"><img src="https://via.placeholder.com/300x200"><h3>Green Goblin</h3><p>Spider-Man's dangerous enemy.</p></div>
+    <div class="card"><img src="https://via.placeholder.com/300x200"><h3>Doctor Octopus</h3><p>A brilliant but corrupted scientist.</p></div>
+    <div class="card"><img src="https://via.placeholder.com/300x200"><h3>Venom</h3><p>A dark reflection of Spider-Man.</p></div>
+    <div class="card"><img src="https://via.placeholder.com/300x200"><h3>Sandman</h3><p>A villain with tragic origins.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300x200">
+    <img src="https://via.placeholder.com/300x200">
+    <img src="https://via.placeholder.com/300x200">
+    <img src="https://via.placeholder.com/300x200">
+  </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <form class="cnt">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="5" placeholder="Message" required></textarea>
+        <button type="submit" class="send-btn">Send Message</button>
+    </form>
+</section>
+
+
+<footer>
+  <p>Spider-Man Website – University Project</p>
+</footer>
+
+</body>
+</html>
