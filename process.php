@@ -2,22 +2,22 @@
 session_start();
 require_once 'spidermandbconnection.php';
 
-// Connect to database
+
 $my_pdo = db_connection("localhost", "spiderman", "root", "");
 
-// Initialize variables
+
 $name = $email = $message = '';
 $errors = [];
 
-// Check if form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // Get form data
+    
     $name = htmlspecialchars(trim($_POST['name'] ?? ''));
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
     $message = htmlspecialchars(trim($_POST['message'] ?? ''));
     
-    // Validation
+    
     if (empty($name)) {
         $errors[] = "Name is required";
     } elseif (strlen($name) < 2) {
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Message must be at least 10 characters";
     }
     
-    // If no errors, save to database
+    
     if (empty($errors)) {
         if ($my_pdo) {
             try {
@@ -44,14 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $insert_result = $stmt->execute([$name, $email, $message]);
                 
                 if ($insert_result) {
-                    // Store in session for success message
+                    
                     $_SESSION['form_success'] = true;
                     $_SESSION['submitted_name'] = $name;
                     
-                    // Clear form fields
+                    
                     $name = $email = $message = '';
                     
-                    // Redirect to prevent form resubmission
+                    
                     header("Location: php.php#contact");
                     exit();
                 } else {
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// If there are errors, store them in session and redirect back
+
 if (!empty($errors)) {
     $_SESSION['contact_errors'] = $errors;
     $_SESSION['contact_name'] = $name;

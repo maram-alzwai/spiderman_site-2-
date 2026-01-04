@@ -102,4 +102,3 @@ function add_gallery_item($pdo, $image_path, $title, $category, $description) {
         return false;
     }
 }
-?>

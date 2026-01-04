@@ -112,7 +112,7 @@ $username = $is_logged_in ? $_SESSION['username'] : 'Guest';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="spiderman.css">
+    <link rel="stylesheet" href="php.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="icon" type="image/vnd.microsoft.icon" href="images/spiderman-tshirt-seeklogo.png">
     <title>Contact Us - Spider-Man Website</title>
@@ -145,7 +145,9 @@ $username = $is_logged_in ? $_SESSION['username'] : 'Guest';
                     <?= htmlspecialchars($username) ?>
                 </a>
 
-                <ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
+                    <li><a href="profile2.php" class="dropdown-item"><i class="fas fa-user"></i> <span>My Profile</span></a></li>
+                    <li><a href="profile2.php?tab=settings" class="dropdown-item"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
                     <li><a href="?logout=1"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 </ul>
             </li>
@@ -224,6 +226,15 @@ $username = $is_logged_in ? $_SESSION['username'] : 'Guest';
             <?php endif; ?>
         </section>
     </section>
+
+     <footer class="profile-footer">
+        <div class="footer-content">
+            <p>&copy; Web Application Development Project by Maram al Zwai, Alaa Abujazia © 2026</p>
+            <div class="footer-links">
+                <a href="Privacy_Policy.php"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {

@@ -131,7 +131,7 @@ body::before {
     letter-spacing: 0.5px;
 }
 
-/* Form Styles */
+
 .form-group {
      margin-bottom: 0.15in;
     position: relative;
@@ -159,7 +159,7 @@ body::before {
     width: 20px;
 }
 
-/* Input with Icon */
+
 .input-with-icon {
     position: relative;
     transition: all 0.3s ease;
@@ -206,7 +206,7 @@ body::before {
     color: #e62429;
 }
 
-/* Password Toggle Button */
+
 .password-toggle {
     position: absolute;
     right: 15px;
@@ -231,7 +231,7 @@ body::before {
     color: #ff1a1a;
 }
 
-/* Login Options */
+
 .login-options {
     display: flex;
     justify-content: space-between;
@@ -291,7 +291,7 @@ body::before {
     width: 100%;
 }
 
-/* Login Button */
+
 .login-btn {
     width: 100%;
     background: linear-gradient(135deg, #e62429, #c8102e);
@@ -338,7 +338,7 @@ body::before {
     cursor: not-allowed;
 }
 
-/* Messages */
+
 .error-message {
     background: linear-gradient(135deg, 
         rgba(220, 53, 69, 0.15) 0%, 
@@ -392,7 +392,7 @@ body::before {
     font-size: 20px;
 }
 
-/* Back Home Link */
+
 .back-home {
     text-align: center;
     margin-top: 30px;
@@ -425,7 +425,7 @@ body::before {
     transform: translateX(-5px);
 }
 
-/* Test Accounts */
+
 .test-accounts {
     margin-top: 30px;
     padding: 20px;
@@ -474,7 +474,7 @@ body::before {
     font-weight: 600;
 }
 
-/* Loading Spinner */
+
 .fa-spinner {
     animation: spin 1s linear infinite;
 }
@@ -484,7 +484,7 @@ body::before {
     100% { transform: rotate(360deg); }
 }
 
-/* Responsive Design */
+
 @media (max-width: 480px) {
     .login-container {
         padding: 10px;
@@ -520,7 +520,7 @@ body::before {
     }
 }
 
-/* Dark theme scrollbar */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -538,13 +538,13 @@ body::before {
     background: linear-gradient(135deg, #ff1a1a, #e62429);
 }
 
-/* Focus styles for accessibility */
+
 *:focus {
     outline: 2px solid #e62429;
     outline-offset: 2px;
 }
 
-/* Disabled state */
+
 .login-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;

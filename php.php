@@ -29,7 +29,7 @@ if ($my_pdo) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="spiderman.css">
+    <link rel="stylesheet" href="php.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/vnd.microsoft.icon"  href="images/spiderman-tshirt-seeklogo.png">
     <title>Spider-Man Website</title>
@@ -64,6 +64,8 @@ if ($my_pdo) {
                 </a>
 
                 <ul class="dropdown-menu">
+                    <li><a href="profile2.php" class="dropdown-item"><i class="fas fa-user"></i> <span>My Profile</span></a></li>
+                    <li><a href="profile2.php?tab" class="dropdown-item"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
                     <li><a href="?logout=1"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 </ul>
             </li>
@@ -121,7 +123,6 @@ if ($my_pdo) {
 
 </section>
 
-    <!-- MCU SECTION -->
    <section class="Mcu" id="mcu">
     <h2>MCU Appearances</h2>
     <div class="slider-container">
@@ -289,9 +290,16 @@ if ($my_pdo) {
 </section>
     
 
-<footer>
-    Web Application Development Project by Maram al Zwai, Alaa Abujazia © 2025
+<footer class="profile-footer">
+    <div class="footer-content">
+        <p>Web Application Development Project by Maram al Zwai, Alaa Abujazia © 2026</p>
+        <div class="footer-links">
+            <a href="Privacy_Policy.php"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+            <a href="contact_us.php"><i class="fas fa-comment"></i> Contact Us</a>
+        </div>
+    </div>
 </footer>
+
 
 
 
@@ -412,6 +420,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 </script>
 </body>
 </html>

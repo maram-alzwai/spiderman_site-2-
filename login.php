@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
     header("Location: php.php");
     exit();
@@ -12,47 +13,73 @@ $error_message = "";
 $success_message = "";
 $username = "";
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $username = trim($_POST['username']);
-    $password = $_POST['password'];
+    $password = $_POST['password']; 
     $remember_me = isset($_POST['remember_me']);
-    
+
     if (empty($username) || empty($password)) {
         $error_message = "Please enter both username and password";
     } else {
+
         $pdo = db_connection("localhost", "spiderman", "root", "");
-        
+
         if ($pdo) {
             try {
-                
+
                 $stmt = $pdo->prepare("SELECT * FROM spider_passwords WHERE spider_name = ?");
                 $stmt->execute([$username]);
-                $user = $stmt->fetch();
-                
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
                 if ($user) {
-              
-                    if ($password === $user['current_password']) {
-        
+                    
+                    if (password_verify($password, $user['current_password'])) {
+
+                        
+                        session_regenerate_id(true);
+
+                        
                         $_SESSION['user_logged_in'] = true;
                         $_SESSION['username'] = $username;
+                        $_SESSION['user_id'] = $user['id']; 
                         $_SESSION['login_time'] = time();
+
                         
-                        if ($remember_me) {
-                            setcookie('remember_user', $username, time() + (86400 * 30), "/");
+                        
+                        if (file_exists('ActivityLogger.php')) {
+                            require_once 'ActivityLogger.php';
+                            $logger = new ActivityLogger($pdo);
+                            
+                            $logger->logActivity($user['id'], $username, 'LOGIN', 'User logged in successfully');
                         }
                         
+
                         
-                        header("Location: php.php");
-                       
+                        if ($remember_me) {
+                            setcookie(
+                                'remember_user',
+                                $username,
+                                time() + (86400 * 30), 
+                                "/",
+                                "",
+                                false,
+                                true
+                            );
+                        }
+
+                        
+                        header("Location: php.php#contact");
                         exit();
+
                     } else {
                         $error_message = "Invalid password";
                     }
+
                 } else {
                     $error_message = "Username not found";
                 }
-                
+
             } catch (PDOException $e) {
                 $error_message = "Something went wrong. Please try again later.";
                 error_log($e->getMessage());
@@ -136,16 +163,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <i class="fas fa-arrow-left"></i> Back to Spider-Man Website
                 </a>
             </div>
-            
-            <!-- Test accounts info
-            <div class="test-accounts">
-                <h4><i class="fas fa-info-circle"></i> Test Accounts:</h4>
-                <ul>
-                    <li>Username: <strong>Alaa</strong> | Password: <strong>Loloistheadmin</strong></li>
-                    <li>Username: <strong>Maram</strong> | Password: <strong>loliistheadmin</strong></li>
-                    <li>Username: <strong>Test</strong> | Password: <strong>testtesttest</strong></li>
-                </ul>
-            </div> -->
 
         </div>
     </div>
@@ -167,18 +184,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             const loginButton = document.getElementById('loginButton');
             
             loginForm.addEventListener('submit', function() {
-                loginButton.classList.add('loading');
-                loginButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
-                loginButton.disabled = true;
                 
-                setTimeout(() => {
-                    loginButton.classList.remove('loading');
-                    loginButton.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
-                    loginButton.disabled = false;
-                }, 5000);
+                loginButton.style.opacity = '0.8';
+                loginButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
             });
             
+            
             document.getElementById('username').focus();
+            
             
             function getCookie(name) {
                 const value = `; ${document.cookie}`;

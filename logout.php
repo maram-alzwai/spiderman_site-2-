@@ -2,6 +2,5 @@
 session_start();
 session_destroy();
 header("Location: php.php");
-header("Location: contact_us.php");
 exit();
 

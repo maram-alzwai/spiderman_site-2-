@@ -1,0 +1,140 @@
+
+.edit-movie-container {
+    max-width: 600px;
+    margin: 120px auto 50px; 
+    padding: 40px;
+    background: rgba(20, 20, 20, 0.95); 
+    border: 1px solid #444;
+    border-top: 3px solid #a04040; 
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); 
+}
+
+
+.edit-movie-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #c46d63; 
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.edit-movie-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.edit-movie-container label {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: -10px;
+    font-weight: 500;
+}
+
+
+.edit-movie-container input,
+.edit-movie-container textarea,
+.edit-movie-container select {
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #1a1a1a; 
+    color: #eee; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.edit-movie-container textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+
+.edit-movie-container input:focus,
+.edit-movie-container textarea:focus,
+.edit-movie-container select:focus {
+    outline: none;
+    border-color: #a04040;
+    box-shadow: 0 0 10px rgba(160, 64, 64, 0.3);
+}
+
+
+.edit-movie-container img {
+    max-width: 150px;
+    border-radius: 8px;
+    margin: 0 auto 10px; 
+    display: block;
+    border: 2px solid #444;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+
+.edit-movie-container button {
+    background: linear-gradient(90deg, #701010, #a04040); 
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: 100%; 
+    margin-top: 10px;
+}
+
+.edit-movie-container button:hover {
+    background: linear-gradient(90deg, #a04040, #c46d63);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(160, 64, 64, 0.4);
+}
+
+
+.edit-movie-container .cancel-link {
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.edit-movie-container .cancel-link:hover {
+    color: #fff;
+}
+
+.edit-movie-container button {
+    background: linear-gradient(135deg, #e62429, #c8102e);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 150px;
+    align-self: center;
+}
+
+.edit-movie-container button:hover {
+    background: linear-gradient(135deg, #c8102e, #a50e25);
+    transform: translateY(-2px);
+}
+
+
+.edit-movie-container img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+}
